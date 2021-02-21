@@ -626,21 +626,22 @@ Run the [rnaseq-nf](https://github.com/nextflow-io/rnaseq-nf) pipeline
 previously introduced as shown below: 
 
 ```
-./nextflow run rnaseq-nf -with-docker -with-report -with-trace -with-timeline -with-dag dag.png
+./nextflow run rnaseq-nf -with-docker \
+  -with-report report.html \
+  -with-trace trace.tsv \
+  -with-timeline timeline.html \
+  -with-dag dag.png
 ```
 
 The `-with-report` option enables the creation of the workflow execution report. Open 
 the file `report.html` with a browser to see the report created with the above command. 
 
 The `-with-trace` option enables the create of a tab separated file containing runtime 
-information for each executed task. Check the content of the file `trace.txt` for an example.
+information for each executed task. Check the content of the file `trace.tsv` for an example.
 
-The `-with-timeline` option enables the creation of the workflow timeline report showing 
-how processes where executed along time. This may be useful to identify most time consuming 
-tasks and bottlenecks. See an example at [this link](https://www.nextflow.io/docs/latest/tracing.html#timeline-report). 
+The `-with-timeline` option enables the creation of the workflow timeline report showing  how processes where executed along time. This may be useful to identify most time consuming  tasks and bottlenecks. See an example at [this link](https://www.nextflow.io/docs/latest/tracing.html#timeline-report). 
 
-Finally the `-with-dag` option enables to rendering of the workflow execution direct acyclic graph 
-representation. Note: this feature requires the installation of [Graphviz](http://www.graphviz.org/) in your computer. 
+Finally the `-with-dag` option enables to rendering of the workflow execution direct acyclic graph representation. Note: this feature requires the installation of [Graphviz](http://www.graphviz.org/) in your computer. 
 See [here](https://www.nextflow.io/docs/latest/tracing.html#dag-visualisation) for details.
 
 Note: runtime metrics may be incomplete for run short running tasks as in the case of this tutorial.
